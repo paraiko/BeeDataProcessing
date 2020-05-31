@@ -43,7 +43,7 @@ do
         firstFile=$((fileCtr-8))
         firstFile=$(printf "%04d" $firstFile)
 
-        gmic -average_files ????.jpg,0,-1,1 -n 0,255 -o $outputPath/$fn.90mravg.jpg
+        gmic -average_files $tempPath/????.jpg,0,-1,1 -n 0,255 -o $outputPath/$fn.jpg
         rm $tempPath/$firstFile.jpg
         ####gmic -average_files output.mkv,0,-1,600 -n 0,255 -o $f.jpg
     fi
