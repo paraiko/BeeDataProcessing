@@ -1,6 +1,6 @@
 #!/bin/bash
 
-recnr=052
+recnr=$1
 #FILES=/NAS/BeeNas/01_RawData/00_rawh264files/$recnr/*.h264
 inputpath="/NAS/BeeNas/01_RawData/00_ActiveRecordings/"
 outputpath="/NAS/BeeNas/03_ProcessedData/01_ghost_gmic_90min_runavg/00_ghost_jpg/"
