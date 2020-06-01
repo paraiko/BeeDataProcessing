@@ -15,8 +15,8 @@ jpgCt=`find $inputPath/$recNr/*.jpg -maxdepth 0 | wc -l`
 
 # count the amount of already processed jpg files in the directory.
 ravgCt=`find $outputPath/*.jpg -maxdepth 0 | wc -l`
-# increasr ravgCt with 8 to compensate for the first skipped 8 files in the average
-ravgCt=$((ravgCt+8))
+# increase ravgCt with 8 to compensate for the first skipped 8 files in the average
+#ravgCt=$((ravgCt+8))
 
 #Set the filecounter
 fileCtr=0
