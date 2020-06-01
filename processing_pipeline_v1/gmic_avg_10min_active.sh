@@ -40,4 +40,3 @@ do
   fi
   fileCtr=$((fileCtr+1))
 done
-
