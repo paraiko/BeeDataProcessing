@@ -2,9 +2,12 @@
 
 recnr=$1
 #FILES=/NAS/BeeNas/01_RawData/00_rawh264files/$recnr/*.h264
-inputpath="/NAS/BeeNas/01_RawData/00_ActiveRecordings/"
-outputpath="/NAS/BeeNas/03_ProcessedData/01_ghost_gmic_90min_runavg/00_ghost_jpg/"
+inputpath="/NAS/BeeNas/01_RawData/00_ActiveRecordings"
+outputpath="/NAS/BeeNas/03_ProcessedData/01_ghost_gmic_90min_runavg/00_ghost_10m_jpg"
 fileCtr=0
+
+#create output directories if they do not exist.
+mkdir -p $outputpath/$recnr
 
 #find all mkvfiles in the top leveldir of the searchpath that are create > 30 minutes ago (prevents inclusion of the active file) 
 FILES=`find $inputpath/$recnr/*.mkv -maxdepth 0`
@@ -30,7 +33,7 @@ do
     fn="$(basename -- $f)"
     
     nr=$(printf "%04d" $fileCtr)
-    gmic -average_video $f,0,-1,600 -n 0,255 -o $outputpath/$recnr/$fn"_"$nr.jpg
+    gmic -average_video $f,0,-1,300 -n 0,255 -o $outputpath/$recnr/$fn"_"$nr.jpg
 
     #Use mkvmerge to put the h264 file in an mkv container and match the speed of the container to the  recording frames/second
     #mkvmerge --default-duration 0:30fps $f  -o /AristaNas/RaakData/01_VideoData/00_ActiveRecordings/$recnr/$fn.mkv

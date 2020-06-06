@@ -2,10 +2,14 @@
 
 recNr=$1
 #FILES=/NAS/BeeNas/01_RawData/00_rawh264files/$recNr/*.h264
-inputPath="/NAS/BeeNas/03_ProcessedData/01_ghost_gmic_90min_runavg/00_ghost_jpg"
+inputPath="/NAS/BeeNas/03_ProcessedData/01_ghost_gmic_90min_runavg/00_ghost_10m_jpg"
 outputPath="$inputPath/$recNr/90min_runavg"
 tempPath="$inputPath/$recNr/temp"
 fileCtr=0
+
+#create output directories if they do not exist.
+mkdir -p $outputPath/$recNr
+mkdir -p $tempPath
 
 #find all jpgfiles in the top leveldir of the inputPath 
 FILES=`find $inputPath/$recNr/*.jpg -maxdepth 0`
