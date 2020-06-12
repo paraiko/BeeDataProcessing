@@ -15,6 +15,6 @@ now = time.time()
 td = now - lastfile_timestamp
 td_min = str(int(td/60))
 
-if td > 6:
+if td > 660:
     bot.sendMessage('<chat or channel id>', "Recording " + recname +": The last file was created: " + td_min + " min ago. Perhaps the camera has crashed should be check for a crash?" )
 
