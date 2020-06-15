@@ -33,7 +33,7 @@ do
     fn="$(basename -- $f)"
     
     nr=$(printf "%04d" $fileCtr)
-    gmic -average_video $f,0,-1,300 -n 0,255 -o $outputpath/$recnr/$fn"_"$nr.jpg
+    gmic -average_video $f,0,-1,300 -n 0,255 -o $outputpath/$recnr/$recnr"_"$nr"_"$fn.jpg
 
     #Use mkvmerge to put the h264 file in an mkv container and match the speed of the container to the  recording frames/second
     #mkvmerge --default-duration 0:30fps $f  -o /AristaNas/RaakData/01_VideoData/00_ActiveRecordings/$recnr/$fn.mkv
