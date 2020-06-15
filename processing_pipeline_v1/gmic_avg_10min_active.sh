@@ -3,7 +3,7 @@
 recnr=$1
 #FILES=/NAS/BeeNas/01_RawData/00_rawh264files/$recnr/*.h264
 inputpath="/NAS/BeeNas/01_RawData/00_ActiveRecordings"
-outputpath="/NAS/BeeNas/03_ProcessedData/01_ghosting/00_avg10m_jpg"
+outputpath="/NAS/BeeNas/03_ProcessedData/01_ghosting/00_ghost_avg-10m_jpg"
 fileCtr=0
 
 #create output directories if they do not exist.
